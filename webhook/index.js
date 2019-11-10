@@ -10,16 +10,27 @@ const GITHUB_REPOSITORIES_TO_DIR = {
 console.log(SECRET);
 http
   .createServer((req, res) => {
+    console.log("Creating Server");
     req.on('data', chunk => {
+        try{
+      console.log(`Data Received ${data}`);
       const signature = `sha1=${crypto
         .createHmac('sha1', SECRET)
         .update(chunk)
         .digest('hex')}`;
+    
+        console.log(`Signature: ${signature}`);
       const isAllowed = req.headers['x-hub-signature'] === signature;
       const body = JSON.parse(chunk);
       const isMaster = body.ref === 'refs/heads/master';
       const directory = GITHUB_REPOSITORIES_TO_DIR[body.repository.full_name];
+        } catch (error) {
+            console.log(error);
+        }
+
+
       if (isAllowed && isMaster && directory) {
+        console.log("Is Allowed");
         try {
           //exec(`cd ${directory} && bash deploy.sh`);
           console.log("Pull code and run again");
