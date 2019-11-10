@@ -1,0 +1,10 @@
+.title {
+	position: absolute;
+	color: white;
+	margin: 0;
+	top:400px;
+	left:200px
+}
+body {
+	background-color:black;
+}

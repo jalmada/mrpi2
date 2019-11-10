@@ -1,0 +1,23 @@
+{
+  "name": "mrpi2",
+  "version": "1.0.0",
+  "description": "Web Server for my Raspberry Pi 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js localhost 3000 &"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jalmada/mrpi2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jalmada/mrpi2/issues"
+  },
+  "homepage": "https://github.com/jalmada/mrpi2#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>Testoy viendo muchachon !!!</title>
+		<link rel="stylesheet" href="css/main.css">		
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<h1 id="title" class="title">Testoy viendo Muchachon!!!</h1>
+		<img src="imgs/Testoyviendo.png" alt="Testoy viendo muchachon!!!" />
+	</body>
+	<script>
+		$(document).ready(function() {
+    			var f = document.getElementById('title');
+    			setInterval(function() {
+        		f.style.display = (f.style.display == 'none' ? '' : 'none');
+    			}, 1000);
+		});		
+	</script>
+</html>
