@@ -13,7 +13,7 @@ http
     console.log("Creating Server");
     req.on('data', chunk => {
         try{
-      console.log(`Data Received ${data}`);
+      console.log(`Data Received ${chunk}`);
       const signature = `sha1=${crypto
         .createHmac('sha1', SECRET)
         .update(chunk)
@@ -24,10 +24,6 @@ http
       const body = JSON.parse(chunk);
       const isMaster = body.ref === 'refs/heads/master';
       const directory = GITHUB_REPOSITORIES_TO_DIR[body.repository.full_name];
-        } catch (error) {
-            console.log(error);
-        }
-
 
       if (isAllowed && isMaster && directory) {
         console.log("Is Allowed");
@@ -38,6 +34,9 @@ http
           console.log(error);
         }
       }
+    } catch (error) {
+        console.log(error);
+    }
     });
     res.end();
   })
