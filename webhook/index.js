@@ -4,7 +4,7 @@ const exec = require('child_process').exec;
 
 const SECRET =  process.env.SECRET;
 const GITHUB_REPOSITORIES_TO_DIR = {
-  '/jalmada/mrpi2': '/home/pi/dev/mrpi2'
+  'jalmada/mrpi2': '/home/pi/dev/mrpi2'
 };
 
 console.log(SECRET);
