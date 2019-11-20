@@ -3,7 +3,7 @@ var app = express();
 
 app.use(express.static('public'));
 
-app.get('/', function (req, res) {
+app.get('/teabo', function (req, res) {
   res.send('Hola Esposi Te abo mucho, eres mi favorita!!');
 });
 
