@@ -18,7 +18,7 @@ module.exports = {
         }
 
         raspi.init(() => {
-            const servo = new pwm.PWM('GPIO4', 60);
+            const servo = new pwm.SoftPWM('GPIO4', 60);
             let duty = (degreesPosition/18) + 2.5;
             servo.write(duty);
             setTimeout(clear, 1000);
