@@ -19,7 +19,10 @@
   "homepage": "https://github.com/jalmada/mrpi2#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "install": "^0.13.0",
+    "npm": "^6.13.1",
     "onoff": "^5.0.0",
-    "pigpio": "^2.0.1"
+    "pigpio": "^2.0.1",
+    "rpi-gpio": "^2.1.5"
   }
 }
