@@ -9,7 +9,7 @@ function clear(){
     lock = false;
 }
 
-export default {
+module.exports = {
     MoveServo : (degreesPosition) => {    
         if(!lock){
             lock = true;
