@@ -1,8 +1,10 @@
 var express = require('express');
+var bodyParser = require('body-parser')
 var app = express();
 var servocontrols = require('./pi/servocontrols.js');
 
 app.use(express.static('public'));
+app.use(bodyParser.json())
 
 app.get('/teabo', function (req, res) {
   res.send('Hola Esposi Te abo mucho, eres mi favorita!!');
