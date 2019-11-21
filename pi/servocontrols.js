@@ -1,25 +1,27 @@
-const Gpio = require('pigpio').Gpio;
-
-const rpio = require('rpio');
-
-var options = {
-    gpiomem: false,          /* Use /dev/gpiomem */
-    mapping: 'gpio',    /* Use the P1-P40 numbering scheme */
-    mock: undefined,        /* Emulate specific hardware in mock mode */
+const raspi = require('raspi');
+const pwm = require('raspi-soft-pwm');
+var lock = false;
+function clear() {
+    console.log("Servo Moved")    
 }
 
-rpio.init(options);
-
-const pinNo = 4 //This is using the normal PCI positions not the Board
+function clear(){
+    lock = false;
+}
 
 export default {
-    MoveServo : (degreesPosition) => {
+    MoveServo : (degreesPosition) => {    
+        if(!lock){
+            lock = true;
+        } else {
+            return;
+        }
 
-        rpio.init(options);
-
-
-        let servoPin = new Gpio(pinNo, {mode: Gpio.OUTPUT});
-        let modulation = rpio.open(pinNo, rpio.PWM);
-
+        raspi.init(() => {
+            const servo = new pwm.PWM('GPIO4', 60);
+            let duty = (degreesPosition/18) + 2.5;
+            servo.write(duty);
+            setTimeout(clear, 1000);
+        });
     }
 }
