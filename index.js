@@ -12,12 +12,16 @@ app.get('/teabo', function (req, res) {
 
 app.post('/ledon', function (req, res) {
   blinkInterval = setInterval(blinkLED, 250);
+  res.send("{led: on}");
+
 });
 
 app.post('/ledoff', function (req, res) {
   clearInterval(blinkInterval); // Stop blink intervals
   LED.writeSync(0); // Turn LED off
   LED.unexport(); // Unexport GPIO to free resources
+
+  res.send("{led: off}");
 });
 
 app.listen(3000, function () {
