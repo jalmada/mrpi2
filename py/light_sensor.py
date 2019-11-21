@@ -10,7 +10,7 @@ __maintainer__ = "pimylifeup.com"
 GPIO.setmode(GPIO.BOARD)
 
 #define the pin that goes to the circuit
-pin_to_circuit = 7
+pin_to_circuit = 11
 
 def rc_time (pin_to_circuit):
     count = 0
@@ -39,7 +39,7 @@ try:
             GPIO.output(18,GPIO.HIGH)
         else:
             GPIO.output(18,GPIO.LOW)
-        print(light_value)
+#        print(light_value)
 except KeyboardInterrupt:
     pass
 finally:

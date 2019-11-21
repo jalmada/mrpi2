@@ -28,7 +28,7 @@ http
       if (isAllowed && isMaster && directory) {
         console.log("Is Allowed");
         try {
-          //exec(`cd ${directory} && bash deploy.sh`);
+          exec(`cd ${directory} && git pull`);
           console.log("Pull code and run again");
         } catch (error) {
           console.log(error);
