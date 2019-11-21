@@ -10,7 +10,8 @@ app.get('/teabo', function (req, res) {
 
 app.post('/move', function (req, res) {
 
-  servocontrols.MoveServo(100);
+  console.log(req.body);
+  servocontrols.MoveServo(parseInt(req.body));
   res.send('Servo Moved!');
 });
 
