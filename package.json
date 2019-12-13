@@ -21,7 +21,7 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "install": "^0.13.0",
-    "npm": "^6.13.1",
+    "npm": "^6.13.4",
     "raspi": "^6.0.1",
     "raspi-soft-pwm": "^6.0.2"
   }
